@@ -1,0 +1,52 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="io.stanwood.framework.loadingindicator.ConnectivityViewModel"/>
+
+    </data>
+
+    <io.stanwood.framework.loadingindicator.ConnectivityView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@{vm.isError ? @color/red : @color/azure}"
+        android:orientation="horizontal"
+        app:expanded="@{vm.isVisible,default=false}">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@{vm.message}"/>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    style="@style/Base.Widget.AppCompat.ActionButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:clickable="@{vm.isError}"
+                    android:onClick="@{vm::onClick}"
+                    android:padding="16dp"
+                    android:src="@drawable/ic_refresh_white_24dp"
+                    app:anim="@{!vm.isError ? @anim/progress_rotate : null}"/>
+            </FrameLayout>
+        </LinearLayout>
+    </io.stanwood.framework.loadingindicator.ConnectivityView>
+</layout>
