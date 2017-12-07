@@ -2,46 +2,43 @@ package io.stanwood.framework.loadingindicator.sample
 
 import android.databinding.BaseObservable
 import android.os.AsyncTask
-import io.stanwood.framework.loadingindicator.ConnectivityViewModel
+import io.stanwood.framework.loadingindicator.LoadingIndicatorViewModel
 
 class MainActivityViewModel : BaseObservable() {
 
-    private val refreshClickCallback = object : ConnectivityViewModel.ItemClickCallback {
-        override fun onClick(trigger: ConnectivityViewModel) = loadData()
+    private val refreshClickCallback = object : LoadingIndicatorViewModel.ItemClickCallback {
+        override fun onClick(trigger: LoadingIndicatorViewModel) = loadData()
     }
 
-    val connectivityViewModel = ConnectivityViewModel(
-            refreshClickCallback,
-            "Whoops, something went wrong!",
-            BuildConfig.DEBUG)
+    val loadingIndicatorViewModel = LoadingIndicatorViewModel(refreshClickCallback)
 
     fun loadData() {
-        if (connectivityViewModel.isVisible && !connectivityViewModel.isError) {
+        if (loadingIndicatorViewModel.isVisible && !loadingIndicatorViewModel.isError) {
             // normally we would never check the current loading state by looking at the UI, but as this is just a sample this should suffice
             return
         }
 
-        connectivityViewModel.loadingMessage = "Loading..."
-        SleepyAsyncTask(connectivityViewModel).execute()
+        loadingIndicatorViewModel.loadingMessage = "Loading..."
+        SleepyAsyncTask(loadingIndicatorViewModel).execute()
     }
 
     fun showError() {
-        connectivityViewModel.error = "Some weird error happened"
+        loadingIndicatorViewModel.errorMessage = "Some weird errorMessage happened"
     }
 }
 
-class SleepyAsyncTask(private val connectivityViewModel: ConnectivityViewModel) : AsyncTask<Void, Void, Void?>() {
+class SleepyAsyncTask(private val loadingIndicatorViewModel: LoadingIndicatorViewModel) : AsyncTask<Void, Void, Void?>() {
     override fun doInBackground(vararg p0: Void?): Void? {
         Thread.sleep(3000)
         return null
     }
 
     override fun onPostExecute(result: Void?) {
-        if (connectivityViewModel.isError) {
-            // do not hide loading indicator if we are displaying an error
+        if (loadingIndicatorViewModel.isError) {
+            // do not hide loading indicator if we are displaying an errorMessage
             return
         }
 
-        connectivityViewModel.loadingMessage = null
+        loadingIndicatorViewModel.loadingMessage = null
     }
 }

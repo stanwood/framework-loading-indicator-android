@@ -5,11 +5,11 @@
 
         <variable
             name="vm"
-            type="io.stanwood.framework.loadingindicator.ConnectivityViewModel"/>
+            type="io.stanwood.framework.loadingindicator.LoadingIndicatorViewModel"/>
 
     </data>
 
-    <io.stanwood.framework.loadingindicator.ConnectivityView
+    <io.stanwood.framework.loadingindicator.LoadingIndicatorView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@{vm.isError ? @color/red : @color/azure}"
@@ -48,5 +48,5 @@
                     app:anim="@{!vm.isError ? @anim/progress_rotate : null}"/>
             </FrameLayout>
         </LinearLayout>
-    </io.stanwood.framework.loadingindicator.ConnectivityView>
+    </io.stanwood.framework.loadingindicator.LoadingIndicatorView>
 </layout>

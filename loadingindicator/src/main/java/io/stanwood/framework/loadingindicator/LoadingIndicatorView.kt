@@ -4,9 +4,12 @@ import android.content.Context
 import android.util.AttributeSet
 import android.widget.LinearLayout
 
-class ConnectivityView @JvmOverloads constructor(context: Context,
-                                                 attrs: AttributeSet? = null,
-                                                 defStyleAttr: Int = 0) : LinearLayout(context, attrs, defStyleAttr) {
+/**
+ * The view for the loading indicator.
+ */
+class LoadingIndicatorView @JvmOverloads constructor(context: Context,
+                                                     attrs: AttributeSet? = null,
+                                                     defStyleAttr: Int = 0) : LinearLayout(context, attrs, defStyleAttr) {
 
     companion object {
         private val MIN_SHOW_TIME = 500
@@ -57,6 +60,21 @@ class ConnectivityView @JvmOverloads constructor(context: Context,
         removeCallbacks(delayedShow)
     }
 
+    /**
+     * Animates the loading indicator in/out from/to the top if after [MIN_DELAY] for at least
+     * [MIN_SHOW_TIME].
+     *
+     * To avoid flickering a few restrictions have been set in place:
+     *
+     * If the view is set to be expanded and within the delay the method is called again with
+     * `expanded = false` the nothing happens.
+     *
+     * If the view is set to be hidden within the `MIN_DELAY + MIN_SHOW_TIME` after it has been set
+     * to be expanded the indicator will stay expanded until this time frame has passed.
+     *
+     * @param expanded if `true` the loading indicator will be animated in, if `false` it will be
+     *          animated out if necessary
+     */
     fun setExpanded(expanded: Boolean) {
         if (expanded) {
             startTime = -1
