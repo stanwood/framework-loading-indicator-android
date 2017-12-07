@@ -4,6 +4,8 @@
 
 This library contains a simple to use data-binding compatible loading/error indicator with retry functionality.
 
+![Demo](indicator.gif)
+
 ## Import
 
 The stanwood Loading Indicator is hosted on JitPack. Therefore you can simply import it by adding
@@ -23,7 +25,7 @@ Then add this to you app's `build.gradle`:
 
 ```groovy
 dependencies {
-    compile 'com.github.stanwood:Loading_Indicator_android:1.0'
+    compile 'com.github.stanwood:Loading_Indicator_android:1.0' // aar version available as well
 }
 ```
 
