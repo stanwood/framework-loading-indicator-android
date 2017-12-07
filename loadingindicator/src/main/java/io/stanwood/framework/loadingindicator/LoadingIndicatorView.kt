@@ -4,17 +4,15 @@ import android.content.Context
 import android.util.AttributeSet
 import android.widget.LinearLayout
 
+private const val MIN_SHOW_TIME = 500
+private const val MIN_DELAY = 200
+
 /**
  * The view for the loading indicator.
  */
 class LoadingIndicatorView @JvmOverloads constructor(context: Context,
                                                      attrs: AttributeSet? = null,
                                                      defStyleAttr: Int = 0) : LinearLayout(context, attrs, defStyleAttr) {
-
-    companion object {
-        private val MIN_SHOW_TIME = 500
-        private val MIN_DELAY = 200
-    }
 
     private var isExpanded = false
     private var startTime = -1L
