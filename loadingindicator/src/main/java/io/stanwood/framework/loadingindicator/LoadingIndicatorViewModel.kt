@@ -11,8 +11,8 @@ import android.view.View
  * This View model allows setting of a loading message and an error message. If one of these is set the
  * loading indicator will be shown.
  *
- * The latest change to errorMessage or loadingMessage (including setting the latter to to `null)
- * always overrides the current state.
+ * The latest change to errorMessage or loadingMessage (including setting the latter to to `null`
+ * or empty) always overrides the current state.
  *
  * @param retryClickCallback [ItemClickCallback] the callback to be invoked when the user clicks the
  *          retry button on the errorMessage
@@ -21,7 +21,7 @@ class LoadingIndicatorViewModel(private val retryClickCallback: ItemClickCallbac
 
     /**
      * Changing the loading message directly affects the current state of the indicator. If `null`
-     * it will be hidden, else it will be shown, regardless of the current error state.
+     * or empty it will be hidden, else it will be shown, regardless of the current error state.
      */
     var loadingMessage: String? = null
         set(value) {
