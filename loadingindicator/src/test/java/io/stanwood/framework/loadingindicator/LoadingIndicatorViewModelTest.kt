@@ -87,6 +87,7 @@ class LoadingIndicatorViewModelTest {
         viewModel.loadingMessage = "test"
         assert(viewModel.isVisible)
         assert(!viewModel.isError)
+        assertEquals(null, viewModel.errorMessage)
     }
 
     @Test
@@ -101,5 +102,17 @@ class LoadingIndicatorViewModelTest {
         viewModel.loadingMessage = ""
         assert(!viewModel.isVisible)
         assert(!viewModel.isError)
+    }
+
+    @Test
+    fun givenLoadingIndicatorIsShownThenTheMessageShouldBeTheLoadingMessage() {
+        viewModel.loadingMessage = "test"
+        assertEquals("test", viewModel.message)
+    }
+
+    @Test
+    fun givenErrorIndicatorIsShownThenTheMessageShouldBeTheLoadingMessage() {
+        viewModel.errorMessage = "test"
+        assertEquals("test", viewModel.message)
     }
 }
