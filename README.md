@@ -77,5 +77,4 @@ For more information check out the Javadoc of `LoadingIndicatorView` and `Loadin
 ## Roadmap
 
 - implement View as custom View with attributes instead of forcing usage of an include tag
-- write tests
 - get rid of data binding prerequisite?

@@ -2,7 +2,6 @@ package io.stanwood.framework.loadingindicator
 
 import android.databinding.BaseObservable
 import android.databinding.Bindable
-import android.text.TextUtils
 import android.view.View
 
 /**
@@ -47,10 +46,10 @@ class LoadingIndicatorViewModel(private val retryClickCallback: ItemClickCallbac
 
     val isError: Boolean
         @Bindable
-        get() = !TextUtils.isEmpty(errorMessage)
+        get() = !errorMessage.isNullOrEmpty()
 
     private val isLoading: Boolean
-        get() = !TextUtils.isEmpty(loadingMessage)
+        get() = !loadingMessage.isNullOrEmpty()
 
     val isVisible: Boolean
         @Bindable
