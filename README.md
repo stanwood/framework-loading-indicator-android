@@ -1,4 +1,5 @@
 [![Release](https://jitpack.io/v/stanwood/Loading_Indicator_android.svg?style=flat-square)](https://jitpack.io/#stanwood/Loading_Indicator_android)
+[![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=5a313683a395dc0001ca4b3e&branch=master&build=latest)](https://dashboard.buddybuild.com/apps/5a313683a395dc0001ca4b3e/build/latest?branch=master)
 
 # stanwood Loading Indicator (Android)
 
