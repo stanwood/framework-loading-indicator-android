@@ -1,4 +1,5 @@
 [![Release](https://jitpack.io/v/stanwood/Loading_Indicator_android.svg?style=flat-square)](https://jitpack.io/#stanwood/Loading_Indicator_android)
+[![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=5a313683a395dc0001ca4b3e&branch=master&build=latest)](https://dashboard.buddybuild.com/apps/5a313683a395dc0001ca4b3e/build/latest?branch=master)
 
 # stanwood Loading Indicator (Android)
 
@@ -77,5 +78,4 @@ For more information check out the Javadoc of `LoadingIndicatorView` and `Loadin
 ## Roadmap
 
 - implement View as custom View with attributes instead of forcing usage of an include tag
-- write tests
 - get rid of data binding prerequisite?
