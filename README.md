@@ -27,7 +27,7 @@ Then add this to you app's `build.gradle`:
 ```groovy
 dependencies {
     implementation 'com.github.stanwood:Loading_Indicator_android:<insert latest version here>' // aar version available as well
-    apk "org.jetbrains.kotlin:kotlin-stdlib:1.2.0" // only add this line if you don't have Kotlin configured in your app!
+    runtimeOnly "org.jetbrains.kotlin:kotlin-stdlib:1.2.0" // only add this line if you don't have Kotlin configured in your app!
 }
 ```
 
