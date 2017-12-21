@@ -26,7 +26,7 @@ Then add this to you app's `build.gradle`:
 
 ```groovy
 dependencies {
-    compile 'com.github.stanwood:Loading_Indicator_android:<insert latest version here>' // aar version available as well
+    implementation 'com.github.stanwood:Loading_Indicator_android:<insert latest version here>' // aar version available as well
 }
 ```
 
