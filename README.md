@@ -1,4 +1,4 @@
-[![Release](https://jitpack.io/v/stanwood/Loading_Indicator_android.svg?style=flat-square)](https://jitpack.io/#stanwood/Loading_Indicator_android)
+[![Release](https://jitpack.io/v/stanwood/framework-loading-indicator-android.svg?style=flat-square)](https://jitpack.io/#stanwood/framework-loading-indicator-android)
 [![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=5a313683a395dc0001ca4b3e&branch=master&build=latest)](https://dashboard.buddybuild.com/apps/5a313683a395dc0001ca4b3e/build/latest?branch=master)
 
 # stanwood Loading Indicator (Android)
@@ -26,7 +26,7 @@ Then add this to you app's `build.gradle`:
 
 ```groovy
 dependencies {
-    implementation 'com.github.stanwood:Loading_Indicator_android:<insert latest version here>' // aar version available as well
+    implementation 'com.github.stanwood:framework-loading-indicator-android:<insert latest version here>' // aar version available as well
     runtimeOnly "org.jetbrains.kotlin:kotlin-stdlib:1.2.0" // only add this line if you don't have Kotlin configured in your app!
 }
 ```
