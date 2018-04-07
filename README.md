@@ -76,7 +76,12 @@ loadingIndicatorViewModel.errorMessage = null // hides error if not currently lo
 
 For more information check out the Javadoc of `LoadingIndicatorView` and `LoadingIndicatorViewModel` as well as the sample app.
 
+## Known issues
+
+The library currently doesn't work with the Android Databinding compiler V2 - make sure to not
+enable it in your `gradle.properties`!
+
 ## Roadmap
 
 - implement View as custom View with attributes instead of forcing usage of an include tag
-- get rid of data binding prerequisite?
+- get rid of data binding prerequisite - if we want to keep it make library compatible with compiler V2
