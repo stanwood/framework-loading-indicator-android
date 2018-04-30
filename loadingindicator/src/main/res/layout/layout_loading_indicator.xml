@@ -6,6 +6,7 @@
         <variable
             name="vm"
             type="io.stanwood.framework.loadingindicator.LoadingIndicatorViewModel"/>
+        <import type="android.text.TextUtils"/>
 
     </data>
 
@@ -45,7 +46,7 @@
                     android:onClick="@{vm::onClick}"
                     android:padding="16dp"
                     android:src="@drawable/ic_refresh_white_24dp"
-                    app:anim="@{!vm.isError ? @anim/progress_rotate : null}"/>
+                    app:anim="@{!vm.isError &amp;&amp; vm.isVisible ? @anim/progress_rotate : null}"/>
             </FrameLayout>
         </LinearLayout>
     </io.stanwood.framework.loadingindicator.LoadingIndicatorView>
